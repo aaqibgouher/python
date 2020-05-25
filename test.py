@@ -4,3 +4,5 @@ length = len(arr)
 # print(length)
 arr.append("Hamzaa")
 print(arr)
+arr.pop()
+pritn
