@@ -1,8 +1,2 @@
-arr = ["Aaqib","Ajay","Satya"]
-length = len(arr)
-# print(arr)
-# print(length)
-arr.append("Hamzaa")
-print(arr)
-arr.pop()
-pritn
+import random
+print(random.randrange(1,10))
