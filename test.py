@@ -1,6 +1,10 @@
-name = """My Name is Aaqib Gouher.
-I study in the college of 
-the Oxford College Of Science
-"""
-x = "The" in name
-print(x)
+import mysql.connector
+
+db = mysql.connector.connect(
+    host = "localhost",
+    user = "root",
+    password = "root"
+)
+
+cnnc = db.cursor()
+cnnc.execute("CREATE DATABASE TEST")
