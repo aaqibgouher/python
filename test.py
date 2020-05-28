@@ -7,4 +7,4 @@ db = mysql.connector.connect(
 )
 
 cnnc = db.cursor()
-cnnc.execute("CREATE DATABASE TEST")
+cnnc.execute("drop database TEST")
