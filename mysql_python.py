@@ -78,3 +78,11 @@ my_db.execute("use test")     #using test db
 #     print(i)
 
 # my_db.execute("select * from std_details limit 5")
+
+#JOIN
+# sql = "select sd.id,sd.name,sd.house,b.name,b.author from std_details sd left join books  b on sd.id = b.id"
+# mydb.execute(sql)
+# data = mydb.fetchall()
+
+# for i in data :
+#     print(i)
