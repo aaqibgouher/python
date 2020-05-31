@@ -1,3 +1,3 @@
-import numpy
-
-arr = numpy.array([1,2,3,4,5])
+from numpy import random
+x = random.choice([1,2,3,4,5])
+print(x)
