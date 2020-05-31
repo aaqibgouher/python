@@ -1,3 +1,7 @@
-from numpy import random
-x = random.choice([1,2,3,4,5])
+import numpy as np
+
+arr = np.arange(1, 11)
+
+x = np.lcm.reduce(arr)
+
 print(x)
