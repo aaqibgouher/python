@@ -31,3 +31,6 @@ print(np.divide(arr_1,arr_2))
 # 5.
 # Power
 
+arr_1 = np.array([1,2,3,4,5])
+arr_2 = np.array([5,4,3,2,1])
+print(np.power(arr_1,arr_2))
