@@ -1,0 +1,42 @@
+import numpy as np
+
+# 1. trigonometry values - for single only 
+
+# val = np.sin(np.pi/6)
+# print(val)
+
+# 2. trigonometry values - in an array
+
+# arr = np.array([0,np.pi/6,np.pi/4,np.pi/3,np.pi/2])
+# sin_val = np.sin(arr)
+# print(sin_val)
+
+# 3. Degree to Radian - (d) x pi/180
+
+# arr = np.array([0,30,45,60,90])
+# val = np.deg2rad(arr)
+# print(val)
+
+# 4. Radian to Degree - (r) x 180/pi
+
+# arr = np.array([0,np.pi/6,np.pi/4,np.pi/3,np.pi/2])
+# val = np.rad2deg(arr)
+# print(val)
+
+# 5. For ITF - inverse trigo(for single)
+
+# val = np.arcsin(1)
+# print(val)
+
+# 6. For ITF - inverse trigo(in an array)
+
+# arr = np.array([0,1,-1])
+# val = np.arcsin(arr)
+# print(val)
+
+# 7. find Hypotaneous - base and perpendicular will be given
+
+# a = 3
+# b = 4
+
+# print(np.hypot(a,b))

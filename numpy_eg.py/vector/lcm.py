@@ -1,9 +1,29 @@
 import numpy as np
 
-print(np.lcm(2,3))
-print(np.lcm.reduce([2,3,4]))
+# 1. L.C.M - for two number
 
-print(np.gcd(2,3))
-print(np.gcd.reduce([2,3,4]))
+a = 2
+b = 4
+print(np.lcm(a,b))
 
-print(np.arange(1,11))
+# 2. L.C.M - more than 2 i.e in array
+
+arr = np.array([2,4,6])
+print(np.lcm.reduce(arr))
+
+# 3. LCM - in a given range
+
+arr = np.arange(1,11)
+# print(type(arr))
+print(np.lcm.reduce(arr))
+
+# 4. GCD - for two numbers
+
+a = 2
+b = 4
+print(np.gcd(a,b))
+
+# 5. GCD - for more than 2 i.e in array
+
+arr = np.array([2,4,6])
+print(np.gcd.reduce(arr))
