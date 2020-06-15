@@ -1,18 +1,34 @@
-from numpy import random
-import matplotlib.pyplot as pt
-import seaborn as sns
+import pandas as pd
+import numpy as np
 
+def get_response_list_top_10(df):
+   df_new = pd.DataFrame()
+   df_new["Country/Region"] = df["Country/Region"]
+   df_new["Confirmed"] = df.iloc[:,-1]
+   df_all_new = df_new.sort_values("Confirmed",ascending=False).head(10)
+   print(df_all_new)
+   print(df_all_new.to_dict())
+   print(df_all_new.set_index('Country/Region'))
+   print(df_all_new.set_index('Country/Region').to_dict())
+   print(df_all_new.T)
+   print(df_all_new.T.to_dict())
+   return df_all_new.T.to_dict()
 
-#simply poisson dist
-x = random.poisson(lam=9,size=10)
-print(x)
+def delete_and_group_col(df):
+   drop_col = ["Province/State","Lat","Long"]
+   df = df.drop(drop_col,axis=1)
+   return df.groupby("Country/Region",as_index=False).agg(sum)
 
-#visualisation of P.D :
-# x = random.poisson(lam=9,size=10)
-sns.distplot(x)
-pt.show()
+if __name__ == '__main__':
 
-# relation between normal and poisson dist :
-sns.distplot(random.poisson(lam=10,size=1000),hist=10)
-sns.distplot(random.normal(loc=10,scale=5,size=1000),hist=10)
-pt.show()
+   url_con = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv"
+   url_recov = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv"
+   url_death = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv"
+
+   df_con = pd.read_csv(url_con)
+   df_recov = pd.read_csv(url_recov)
+   df_death = pd.read_csv(url_death)
+
+   df_con_new = delete_and_group_col(df_con)
+   response_list = get_response_list_top_10(df_con_new)
+   # print(response_list)
